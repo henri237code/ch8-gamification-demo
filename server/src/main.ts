@@ -1,0 +1,31 @@
+import { randomBytes } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { networkInterfaces } from 'node:os';
+import { openDatabase } from './db.js';
+import { Engine } from './engine.js';
+import { createRuntime } from './runtime.js';
+
+const databasePath=resolve(process.env.CH8_DB_PATH??'data/ch8.sqlite');
+const db=openDatabase(databasePath), engine=new Engine(db);
+mkdirSync(dirname(databasePath),{recursive:true});
+const tokenPath=resolve(dirname(databasePath),'control-token.txt');
+if(!existsSync(tokenPath)) writeFileSync(tokenPath,randomBytes(32).toString('hex'),{mode:0o600});
+const token=process.env.CH8_CONTROL_TOKEN||readFileSync(tokenPath,'utf8').trim();
+console.log('CH8 — préparation de l’historique fictif et rattrapage…');
+engine.enableFieldCalibration();
+engine.initialize();
+const runtime=createRuntime(engine,token,{onError:error=>console.error('Actualisation interrompue',error)});
+const {server}=runtime;
+const port=Number(process.env.PORT??3080), host=process.env.HOST??'127.0.0.1';
+server.on('error',error=>{console.error('Impossible de lancer le serveur local :',error.message);void runtime.close().catch(()=>{}).finally(()=>{db.close();process.exitCode=1;});});
+server.listen(port,host,()=>{
+  console.log(`Serveur prêt : http://localhost:${port}/api/state`);
+  console.log(`Base locale : ${databasePath}`);
+  console.log(`Clé de contrôle conservée dans : ${tokenPath}`);
+  if(host==='0.0.0.0') for(const addresses of Object.values(networkInterfaces())) for(const a of addresses??[]) if(a.family==='IPv4'&&!a.internal) console.log(`Adresse réseau : http://${a.address}:${port}`);
+  console.log('Données entièrement simulées. Ctrl+C pour arrêter.');
+});
+let closing=false;
+const close=()=>{if(closing)return;closing=true;void runtime.close().then(()=>{db.close();process.exit(0);}).catch(error=>{console.error('Fermeture interrompue',error);process.exit(1);});};
+process.on('SIGINT',close);process.on('SIGTERM',close);

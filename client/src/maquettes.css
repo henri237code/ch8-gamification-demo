@@ -1,0 +1,133 @@
+/* Visual identity from the four specification mockups. Counter sizes stay unchanged. */
+.display-canvas .dashboard{--muted:#b2bbc7;--line:#323947;--green:#9be34f;--amber:#ffc55c;--screen-accent:#9be34f;background:radial-gradient(ellipse at 50% -35%,#1b2636 0,transparent 65%),#080b10;color:#f4f5f7}
+.display-canvas .screen-2{--screen-accent:#f4c44f}
+.display-canvas .screen-3{--screen-accent:#f4c44f}
+.display-canvas .screen-4{--screen-accent:#70c9ff}
+.display-canvas .dashboard .topbar{background:#090d14;border-bottom-color:#354052}
+.display-canvas .dashboard .brand-mark{background:var(--screen-accent);color:#0c1118;border-radius:9px}
+.display-canvas .dashboard .eyebrow{color:var(--screen-accent)}
+.display-canvas .dashboard .page-heading h1 span{color:#bac1ce}
+.display-canvas .dashboard .zone-code{color:var(--card-accent,var(--screen-accent));border-color:var(--card-accent,var(--screen-accent));background:#0a1018}
+.display-canvas .dashboard .zone-icon{color:var(--card-accent,var(--screen-accent))}
+.display-canvas .dashboard .panel{--card-accent:var(--screen-accent);border-color:#374151;background:linear-gradient(135deg,#121923,#0c1119);box-shadow:inset 0 2px 0 color-mix(in srgb,var(--card-accent) 65%,transparent);border-radius:12px}
+.display-canvas .dashboard .zone-title h2{font-weight:600;color:#f4f5f7}
+.display-canvas .dashboard .public-note{border-top-color:#394252;color:#b7c0ce}
+.display-canvas .dashboard .score-panel{--card-accent:#9be34f;background:linear-gradient(135deg,#142316,#0b1410)}
+.display-canvas .dashboard .level-panel{--card-accent:var(--yield,#70c9ff)}
+.display-canvas .dashboard .challenge-panel{--card-accent:#ffb64e;border-color:#88632b;background:linear-gradient(135deg,#2a2112,#15130e)}
+.display-canvas .dashboard .timer-panel{--card-accent:#9be34f}
+.display-canvas .dashboard .timer-warning{--card-accent:#ffad42;border-color:#9c6928}
+.display-canvas .dashboard .timer-warning .timer-number,.display-canvas .dashboard .timer-warning .timer-note{color:#ffbd65}
+.display-canvas .dashboard .timer-warning .timer-progress i{background:#ffad42}
+.display-canvas .dashboard .timer-urgent{--card-accent:#ff7365;border-color:#a74d46}
+.display-canvas .dashboard .timer-urgent .timer-number,.display-canvas .dashboard .timer-urgent .timer-note{color:#ff8675}
+.display-canvas .dashboard .timer-urgent .timer-progress i{background:#ff7365}
+/* Podium: gold, silver and bronze follow actual ranks, including ties. */
+.display-canvas .zone-2A{--card-accent:#f4c44f!important}
+.display-canvas .public-podium article{--medal:#c0cad8;--medal-dark:#5c6778;border:1px solid var(--medal-dark);border-radius:10px 10px 0 0;background:linear-gradient(180deg,color-mix(in srgb,var(--medal) 18%,#10151d),#0b1017 75%);padding:12px 8px 0}
+.display-canvas .public-podium .podium-rank-1{--medal:#ffcf50;--medal-dark:#a5791e}
+.display-canvas .public-podium .podium-rank-2{--medal:#dae3ee;--medal-dark:#6f7b8d}
+.display-canvas .public-podium .podium-rank-3{--medal:#e8a16c;--medal-dark:#936039}
+.display-canvas .public-podium .podium-medal{position:relative;width:62px;height:62px;flex:none;border:4px double var(--medal);background:radial-gradient(circle at 30% 20%,#fff9,var(--medal-dark));color:#fff6d6;box-shadow:0 0 0 3px #080c12,0 0 0 4px var(--medal-dark),inset 0 0 0 3px #ffffff30;text-shadow:0 2px 2px #000a;font-weight:700;z-index:0}
+.display-canvas .public-podium .podium-medal:before,.display-canvas .public-podium .podium-medal:after{content:'';position:absolute;width:17px;height:24px;bottom:-16px;background:var(--medal-dark);clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%);z-index:-1}
+.display-canvas .public-podium .podium-medal:before{left:5px;transform:rotate(22deg)}
+.display-canvas .public-podium .podium-medal:after{right:5px;transform:rotate(-22deg)}
+.display-canvas .public-podium h3{margin-top:10px;color:#f1f3f7}
+.display-canvas .public-podium strong{color:var(--medal)!important}
+.display-canvas .public-podium article>i{background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--medal) 25%,transparent));border-color:var(--medal-dark)}
+.display-canvas .public-podium .podium-rank-pending{border-color:#394252;background:#111721}
+.display-canvas .public-podium .podium-rank-pending .podium-medal{box-shadow:none;background:#1b2430;border:1px solid #586679;color:#b2bbc7}
+.display-canvas .public-podium .podium-rank-pending .podium-medal:before,.display-canvas .public-podium .podium-rank-pending .podium-medal:after{display:none}
+/* Recognition and records: gold awards framed in blue, as in screen two. */
+.display-canvas .dashboard .zone-2B{--card-accent:#f4c44f;border-color:#4169b4;background:linear-gradient(140deg,#101d33,#0a111d)}
+.record-hero{display:flex;align-items:center;gap:15px;flex:1;min-height:0}
+.record-hero>svg{width:48px;height:48px;color:#ffd45e;fill:#eeb63b26;stroke-width:1.5;flex:none}
+.display-canvas .zone-2B .public-hero{color:#ffd45e;margin:8px 0}
+.display-canvas .zone-2B .public-pill{color:#ffda79;border-color:#99752f;background:#f3c14d0e}
+.display-canvas .zone-2B .record-challenge-note{color:#fff0bf}
+.display-canvas .dashboard .zone-2C{--card-accent:#f4c44f;border-color:#99752f;background:linear-gradient(140deg,#262111,#11151c)}
+.display-canvas .zone-2C .public-portrait{border:2px solid #e5b94a}
+.display-canvas .zone-2C .operator-profile h3{color:#ffda79}
+.display-canvas .zone-2C .public-note{color:#ffda79;font-weight:600}
+.display-canvas .dashboard .zone-2D{--card-accent:#91e153;border-color:#487f3c;background:linear-gradient(135deg,#102418,#0b1510)}
+.display-canvas .zone-2D .kaizen-counters svg{color:#9be34f;filter:drop-shadow(0 0 8px #79df3033)}
+.display-canvas .dashboard .zone-2E{--card-accent:#69b9ff;border-color:#375f96;background:linear-gradient(135deg,#111d30,#0c111b)}
+/* Safety, quality and morale each have their own visual emphasis. */
+.display-canvas .dashboard .zone-3A{--card-accent:#ffd05c;border-color:#957535;background:radial-gradient(ellipse at 45% 40%,#302915,#11130f 80%)}
+.display-canvas .zone-3A .safety-number strong{color:#ffd05c;text-shadow:0 0 24px #e6b83e24}
+.display-canvas .zone-3A .safety-number>svg{color:#ffdb82}
+.display-canvas .zone-3A .safety-milestones .reached{color:#ffd66a;border-color:#b18b34;background:#f4c44f14}
+.display-canvas .dashboard .zone-3B{--card-accent:#80df67;border-color:#498c51;background:linear-gradient(130deg,#173b22,#0b1d12)}
+.display-canvas .zone-3B .quality-state{color:#a1eea2}
+.display-canvas .dashboard .zone-3C{--card-accent:#f4c44f;border-color:#8e7e55;background:linear-gradient(130deg,#14283e,#0b1522)}
+.display-canvas .zone-3C .public-badge-profile h3{color:#ffdb7d}
+.display-canvas .zone-3C .security-badge{filter:drop-shadow(0 5px 12px #0007)}
+.display-canvas .dashboard .zone-3D{--card-accent:#ffc657;border-color:#9b7635;background:radial-gradient(ellipse at 50% 40%,#3c2c13,#18130d 85%)}
+.display-canvas .zone-3D .weather-label{color:#ffd775}
+.display-canvas .zone-3D .weather-icon{color:#ffd367;filter:drop-shadow(0 0 10px #f1ad2c44)}
+.display-canvas .dashboard .zone-3E{--card-accent:#79baf1;border-color:#3b5d7e;background:linear-gradient(135deg,#13283a,#0b141e)}
+/* Communication: separate birthday, event and sport areas. */
+.display-canvas .dashboard .zone-4A{--card-accent:#70c9ff;border-color:#416d8c;background:linear-gradient(135deg,#112335,#0b131d)}
+.display-canvas .zone-4A .public-track i{background:linear-gradient(90deg,#338be8,#69ddcc,#9be34f)}
+.display-canvas .dashboard .zone-4B{--card-accent:#ffcc66;border-color:#8c713d;background:linear-gradient(135deg,#231d13,#11151d)}
+.display-canvas .zone-4B .birthday-section>.public-muted{color:#ffda80}
+.display-canvas .zone-4B .birthday-people .public-portrait{border:2px solid #e6be61;box-shadow:0 0 0 3px #d6a62f14}
+.display-canvas .zone-4B .birthday-people small{color:#ffe3a3;background:#68501d55;border:1px solid #9a783a;border-radius:5px;padding:2px 8px;font-weight:600}
+.display-canvas .zone-4B .life-content{padding:10px;border:1px solid #345f85;border-radius:7px;background:#10243a}
+.display-canvas .zone-4B .life-content+.life-content{background:#142c1b;border-color:#427b46}
+.display-canvas .zone-4B .life-label{color:#f0f4fb;font-weight:600}.display-canvas .zone-4B .life-label svg{color:#8ecbff}
+.display-canvas .zone-4B .life-content+.life-content .life-label svg{color:#ffcd67}
+.display-canvas .dashboard .zone-4C{--card-accent:#e8c87f;border-color:#8d784f;background:linear-gradient(135deg,#221f18,#10141b)}
+.display-canvas .zone-4C .public-quote-mark{color:#e8c87f}
+.display-canvas .dashboard .zone-4D{--card-accent:#76cbb2;border-color:#3e706d;background:linear-gradient(135deg,#12272a,#0a151b)}
+.display-canvas .dashboard .zone-4E{--card-accent:#f4c44f;border-color:#8b7139;background:#111318}
+.display-canvas .hall-records article{border:1px solid #68522d;border-radius:7px;padding:9px 12px;background:linear-gradient(100deg,#302510,#141820);gap:13px}
+.display-canvas .hall-records article:nth-child(2){border-color:#657185;background:linear-gradient(100deg,#222c3a,#111820)}
+.display-canvas .hall-records article:nth-child(3){border-color:#8c5e39;background:linear-gradient(100deg,#322318,#181418)}
+.display-canvas .hall-records article>svg{width:34px;height:34px;color:#ffd46c;fill:#ffd46c12;flex:none}
+.display-canvas .hall-records article:nth-child(2)>svg{color:#dce5f4}
+.display-canvas .hall-records article:nth-child(3)>svg{color:#e8ac79}
+.display-canvas .hall-records strong{color:#ffda82}
+.display-canvas .hall-record-date{color:#d1d8e3}
+.compact .public-podium article{padding:8px 4px 0}.compact .public-podium .podium-medal{width:40px;height:40px;border-width:3px}.compact .public-podium h3{margin-top:8px}
+.compact .record-hero{gap:8px}.compact .record-hero>svg{width:28px;height:28px}
+.compact .zone-4B .life-content{padding:6px}.compact .zone-4B .birthday-people small{padding:2px 4px}
+.compact .hall-records article{padding:5px 6px;gap:6px}.compact .hall-records article>svg{width:20px;height:20px}
+@media(prefers-reduced-motion:no-preference){.display-canvas .podium-rank-1 .podium-medal{animation:medal-glow 5s ease-in-out infinite}@keyframes medal-glow{50%{box-shadow:0 0 0 3px #080c12,0 0 0 4px #a5791e,0 0 18px #f4c44f44,inset 0 0 0 3px #ffffff30}}}
+/* Medals fit below the period/goal row rather than covering it. */
+.display-canvas .public-podium article{gap:4px;padding-top:8px}
+.display-canvas .public-podium .podium-medal{width:48px;height:48px}
+.display-canvas .public-podium h3{margin-top:8px}
+.display-canvas .public-podium article>i{height:4px;min-height:4px}
+.display-canvas .public-podium .podium-rank-1>i{height:16px;min-height:16px}
+.display-canvas .public-podium .podium-rank-2>i{height:10px;min-height:10px}
+.display-canvas .public-card-kicker{flex-shrink:0}
+.compact .public-podium .podium-medal{width:34px;height:34px}.compact .public-podium article{padding-top:6px;gap:3px}.compact .public-podium h3{margin-top:5px}
+/* All three record rows and their dates stay above the explanatory footer. */
+.display-canvas .hall-records{gap:7px}
+.display-canvas .hall-records article{padding:4px 10px;min-height:0}
+.display-canvas .hall-records article>div{gap:2px}
+.display-canvas .hall-records article span{font-size:13px;line-height:1.1}
+.display-canvas .hall-records article strong{line-height:1.1}
+.display-canvas .hall-records article p{font-size:12px;line-height:1.1}
+.compact .hall-records{gap:5px}.compact .hall-records article{padding:4px 5px}.compact .hall-records article span,.compact .hall-records article p{font-size:9px}
+/* Narrow displays: keep complete birthdays/events and record dates in the card. */
+.compact .zone-4B .public-panel-body{gap:5px}
+.compact .zone-4B .birthday-section{gap:5px;padding-bottom:5px}
+.compact .zone-4B .life-split{gap:5px;align-content:start}
+.compact .zone-4B .life-content{padding:3px;gap:2px}
+.compact .zone-4B .life-label{gap:3px;font-size:8px;margin-bottom:3px;line-height:1.2}
+.compact .zone-4B .life-label svg{width:12px;height:12px}
+.compact .zone-4B .life-content .public-muted,.compact .zone-4B .life-content .public-paged{font-size:8px;line-height:1.3}
+.compact .hall-records article{display:grid;grid-template-columns:18px minmax(0,1fr);column-gap:5px;row-gap:2px}
+.compact .hall-records article>svg{grid-row:1 / span 2;width:18px;height:18px;align-self:center}
+.compact .hall-records article>div{gap:1px}
+.compact .hall-records article span,.compact .hall-records article p{font-size:8px;line-height:1.1}
+.compact .hall-records article strong{font-size:16px;line-height:1.1}
+.compact .hall-record-date{grid-column:2;margin:0;text-align:left;font-size:8px;line-height:1.1;max-width:100%}
+
+/* Secondary physical volumes preserve the established bottle counters and score. */
+.production-volume,.mission-volume{display:flex;align-items:baseline;gap:9px;flex-shrink:0;flex-wrap:wrap;color:#d8e8f7;line-height:1.2}
+.production-volume{margin-bottom:10px;font-size:17px}.production-volume b{font-size:25px;font-weight:500;color:#8fd5ff}.production-volume>span{color:var(--muted)}
+.mission-volume{font-size:13px;margin-bottom:3px}.mission-volume b{font-size:20px;color:#8fd5ff;font-weight:500}.mission-volume>span{color:var(--muted)}
+.compact .production-volume{font-size:10px;margin-bottom:5px;gap:5px}.compact .production-volume b{font-size:15px}.compact .mission-volume{font-size:9px;gap:4px}.compact .mission-volume b{font-size:13px}

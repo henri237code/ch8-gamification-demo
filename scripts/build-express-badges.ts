@@ -1,0 +1,21 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {EXPRESS_PRESETS} from '../server/src/express-presets.js';
+const dir='public/challenges';mkdirSync(dir,{recursive:true});mkdirSync('docs/previews',{recursive:true});
+const escape=(s:string)=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const icons:Record<string,string>={
+ sprint:'<path d="m58 76 25-26 21 10 15-22m-36 12-7-18 15-11 16 17h19M85 63l-16 32H48m37-32 20 14-9 24"/><circle cx="105" cy="18" r="9"/>',
+ quality:'<path d="m80 10 42 17v34c0 29-22 45-42 56-20-11-42-27-42-56V27Z"/><path d="m57 61 16 16 33-34"/>',
+ steady:'<path d="M29 105V85m25 20V65m26 40V45m26 60V25m25 80V10M20 115h120M30 62l25-16 25 2 26-23 25-9"/>',
+ vigilance:'<path d="M15 62s25-38 65-38 65 38 65 38-25 38-65 38S15 62 15 62Z"/><circle cx="80" cy="62" r="20"/><path d="M80 51v14m0 9v1"/>',
+ kaizen:'<path d="M58 85V75a35 35 0 1 1 44 0v10Zm0 10h44m-38 10h32m-26 10h20M80 37v25m-12-12 12 12 12-12M22 35l-9-5m125 5 9-5M80 5V0"/>'
+};
+function badge(code:string,label:string,color:string) {
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 260"><defs><radialGradient id="g-${code}"><stop stop-color="${color}" stop-opacity=".24"/><stop offset="1" stop-color="#0b1422"/></radialGradient></defs><path d="M120 8 227 69v122l-107 61L13 191V69Z" fill="url(#g-${code})" stroke="${color}" stroke-width="5"/><path d="m120 20 96 55v110l-96 55-96-55V75Z" fill="none" stroke="${color}" stroke-opacity=".25"/><g transform="translate(40 47)" fill="none" stroke="${color}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">${icons[code]}</g><text x="120" y="207" text-anchor="middle" fill="${color}" font-family="Arial,sans-serif" font-size="${label.length>9?17:23}" font-weight="700">${label}</text></svg>`;
+}
+function card(p:typeof EXPRESS_PRESETS[number]) {
+ const texts:Record<string,string[]>={sprint:['9 000 bouteilles','EN 20 MINUTES','Sans arrêt de ligne'],quality:['4 500 conformes','EN 10 MINUTES','Conformité ≥ 99 %'],steady:['3 × 5 minutes','EN 15 MINUTES','≥ 2 000 conformes par période'],vigilance:['1 anomalie utile','EN 20 MINUTES','Signalée et validée par le manager'],kaizen:['1 idée utile','EN 30 MINUTES','Proposée et validée par le manager']};
+ const t=texts[p.code],svg=badge(p.code,p.badge,p.color).replace(/<svg[^>]*>/,'<svg x="524" y="65" width="180" height="195" viewBox="0 0 240 260">');
+ return `<svg xmlns="http://www.w3.org/2000/svg" width="750" height="310" viewBox="0 0 750 310"><rect x="1" y="1" width="748" height="308" rx="24" fill="#0b1422" stroke="${p.color}" stroke-opacity=".6"/><text x="30" y="37" fill="#8a9bb2" font-family="Arial,sans-serif" font-size="12" letter-spacing="3">CH8 · MINI-DÉFI EXPRESS</text><text x="30" y="78" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="28" font-weight="700">${escape(p.title)}</text><text x="30" y="139" fill="${p.color}" font-family="Arial,sans-serif" font-size="38" font-weight="700">${escape(t[0])}</text><text x="32" y="177" fill="#dbe4ee" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">${t[1]}</text><text x="32" y="213" fill="#a8b9cc" font-family="Arial,sans-serif" font-size="17">${escape(t[2])}</text><line x1="30" y1="241" x2="480" y2="241" stroke="#273749"/><text x="32" y="275" fill="${p.color}" font-family="Arial,sans-serif" font-size="17">BADGE ${escape(p.badge)} · +50 PTS*</text>${svg}</svg>`;
+}
+const cards=EXPRESS_PRESETS.map(p=>{writeFileSync(`${dir}/${p.code}.svg`,badge(p.code,p.badge,p.color));const c=card(p);writeFileSync(`${dir}/${p.code}-card.svg`,c);return c;});
+writeFileSync('docs/previews/mini-defis-express.svg',`<svg xmlns="http://www.w3.org/2000/svg" width="1550" height="1130" viewBox="0 0 1550 1130"><rect width="1550" height="1130" fill="#060c14"/><text x="30" y="52" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="30" font-weight="700">CH8 — 5 mini-défis prêts à sélectionner</text>${cards.map((c,i)=>c.replace(/<svg[^>]*>/,`<svg x="${30+(i%2)*770}" y="${80+Math.floor(i/2)*330}" width="750" height="310" viewBox="0 0 750 310">`)).join('')}<text x="30" y="1105" fill="#8a9bb2" font-family="Arial,sans-serif" font-size="16">* Règles de démo : résultat à la fin du défi, bonus plafonné à 100 points par quart. Validation si signal sécurité.</text></svg>`);

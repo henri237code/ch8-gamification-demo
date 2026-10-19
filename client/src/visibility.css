@@ -1,0 +1,154 @@
+/* Fixed logical canvas scales up as well as down: a 4K TV keeps the same hierarchy. */
+.display-canvas:not(.compact) main{max-width:none;width:100%;flex:1;min-height:0;display:flex;flex-direction:column}
+.display-canvas:not(.compact) .topbar{height:82px;min-height:82px}
+.display-canvas:not(.compact) .page-heading{padding:22px 0;height:100px;min-height:100px}
+.display-canvas:not(.compact) .dashboard-grid{flex:1;min-height:0;grid-template-rows:minmax(0,1.12fr) minmax(0,1fr);gap:18px}
+.display-canvas:not(.compact) .panel{padding:22px;min-height:0;display:flex;flex-direction:column}
+.display-canvas:not(.compact) .zone-title{margin-bottom:16px}.display-canvas:not(.compact) .zone-title h2{font-size:20px;line-height:1.2}
+.display-canvas:not(.compact) .zone-code{font-size:13px;min-width:30px;height:30px}
+.display-canvas:not(.compact) .metric-label,.display-canvas:not(.compact) .production-label,.display-canvas:not(.compact) .public-muted{font-size:17px}
+.display-canvas:not(.compact) .production-figure{flex:1;margin:18px 0}.display-canvas:not(.compact) .production-figure strong{font-size:88px;letter-spacing:-4px}.display-canvas:not(.compact) .production-goal{font-size:35px;margin-left:10px}.display-canvas:not(.compact) .bottle{width:28px;margin:0}
+.display-canvas:not(.compact) .progress-label,.display-canvas:not(.compact) .production-bottom{font-size:15px}.display-canvas:not(.compact) .progress-label b{font-size:20px}
+.display-canvas:not(.compact) .score-number{font-size:68px;margin:12px 0}.display-canvas:not(.compact) .score-base{font-size:14px}.display-canvas:not(.compact) .bonus-grid{margin-top:14px;padding-top:14px}.display-canvas:not(.compact) .bonus-grid>div>span{font-size:13px;white-space:normal}.display-canvas:not(.compact) .bonus-grid small{font-size:12px}.display-canvas:not(.compact) .score-total{font-size:15px;margin-top:auto}.display-canvas:not(.compact) .score-total>span small{font-size:13px}
+.display-canvas:not(.compact) .timer-number{font-size:64px;margin:auto 0 28px}.display-canvas:not(.compact) .timer-labels,.display-canvas:not(.compact) .timer-note,.display-canvas:not(.compact) .level-note{font-size:14px}.display-canvas:not(.compact) .timer-note{margin-top:auto}
+.display-canvas:not(.compact) .level-content{flex:1;margin:10px 0;gap:16px}.display-canvas:not(.compact) .level-ring{width:132px;height:132px}.display-canvas:not(.compact) .level-ring strong{font-size:37px;letter-spacing:-1px}.display-canvas:not(.compact) .level-ring span{font-size:15px}.display-canvas:not(.compact) .level-text{min-width:0}.display-canvas:not(.compact) .level-text>span{font-size:15px;line-height:1.5}.display-canvas:not(.compact) .level-text strong{font-size:21px}
+.yield-red{--yield:#f38a7b}.yield-yellow{--yield:#f2c56c}.yield-green{--yield:#b8ed82}.yield-blue{--yield:#73c9f5}.yield-unknown{--yield:#a6b5aa}.level-content .level-ring{border-color:var(--yield,#b8ed82);border-right-color:#364930}.level-content .level-ring strong{color:var(--yield,#b8ed82)}
+.display-canvas:not(.compact) .challenge-heading,.display-canvas:not(.compact) .challenge-bottom{font-size:14px}.display-canvas:not(.compact) .challenge-content h3{font-size:19px}.display-canvas:not(.compact) .challenge-content p{font-size:14px}.display-canvas:not(.compact) .challenge-target{font-size:43px}.display-canvas:not(.compact) .challenge-content{flex:1;min-height:0}
+.display-canvas:not(.compact) .public-note{font-size:14px;line-height:1.4}.display-canvas:not(.compact) .public-paged{font-size:18px}.display-canvas:not(.compact) .public-podium h3{font-size:23px}.display-canvas:not(.compact) .public-podium strong{font-size:38px}.display-canvas:not(.compact) .public-podium p,.display-canvas:not(.compact) .public-podium .podium-pending-note{font-size:13px}
+.display-canvas:not(.compact) .operator-profile h3{font-size:27px}.display-canvas:not(.compact) .kaizen-counters span{font-size:16px}.display-canvas:not(.compact) .public-chart-labels,.display-canvas:not(.compact) .public-legend{font-size:13px}
+.display-canvas:not(.compact) .quality-detail{font-size:16px}.display-canvas:not(.compact) .quality-state{font-size:20px}.display-canvas:not(.compact) .public-badge-profile h3{font-size:24px}.display-canvas:not(.compact) .public-badge-profile p{font-size:17px}.display-canvas:not(.compact) .weather-label{font-size:23px!important}.display-canvas:not(.compact) .weather-values span{font-size:15px}.display-canvas:not(.compact) .weather-values strong{font-size:30px}
+.display-canvas:not(.compact) .fitted-editorial{--editorial-preferred-size:28}.display-canvas:not(.compact) .fitted-quote{--editorial-preferred-size:30}.display-canvas:not(.compact) .zone-3E h3{font-size:.85em}
+.display-canvas:not(.compact) .mission-number strong{font-size:60px}.display-canvas:not(.compact) .mission-percent{font-size:17px}.display-canvas:not(.compact) .mission-teams{font-size:15px}.display-canvas:not(.compact) .birthday-people strong{font-size:15px}.display-canvas:not(.compact) .birthday-people small{font-size:13px}.display-canvas:not(.compact) .life-content .public-paged,.display-canvas:not(.compact) .life-content .public-muted{font-size:15px}.display-canvas:not(.compact) .life-label{font-size:15px}.display-canvas:not(.compact) .energy-figures .public-muted{font-size:15px}.display-canvas:not(.compact) .energy-figures>div>small{font-size:13px}.display-canvas:not(.compact) .hall-records span,.display-canvas:not(.compact) .hall-records p{font-size:15px}
+.display-canvas:not(.compact) footer{height:56px;min-height:56px;max-height:56px;font-size:15px}
+.compact .production-figure strong{font-size:49px}.compact .production-goal{font-size:19px}.compact .level-ring strong{font-size:22px}.compact .level-text>span{font-size:10px}.compact .level-text strong{font-size:12px}
+.shift-report{max-width:900px;width:90vw}.shift-report header{display:flex;align-items:center;justify-content:space-between;gap:20px}.shift-report p{line-height:1.6;white-space:pre-wrap;margin:12px 0}.report-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0}.report-metrics div{display:flex;flex-direction:column;gap:8px}.report-metrics strong{font-size:25px;color:var(--green)}.shift-report table{width:100%;border-collapse:collapse}.shift-report td,.shift-report th{text-align:left;padding:9px;border-bottom:1px solid var(--line)}.report-yield{color:var(--yield,#a6b5aa);font-weight:600}.shift-report h3{margin-top:20px}
+.display-canvas:not(.compact) .score-number{font-size:62px;margin:10px 0}.display-canvas:not(.compact) .bonus-grid{margin-top:10px;padding-top:10px}.display-canvas:not(.compact) .bonus-grid strong{margin:4px 0 3px}
+.display-canvas:not(.compact) main{padding-left:1.4%;padding-right:1.4%}.display-canvas:not(.compact) .topbar{padding-left:1.4%;padding-right:1.4%}.display-canvas:not(.compact) .production-figure strong{font-size:96px}
+/* 1A : longueur ET couleur suivent l'objectif ; 1D conserve le rendement. */
+.production-progress-key{display:block;font-size:14px;line-height:1.3;color:var(--goal,var(--muted));margin-top:5px;font-weight:500}
+.production-panel.goal-red{--goal:#f38a7b;--goal-dim:#ac5e52}.production-panel.goal-orange{--goal:#fb923c;--goal-dim:#c56624}.production-panel.goal-green{--goal:#b8ed82;--goal-dim:#789f4e}.production-panel.goal-blue{--goal:#73c9f5;--goal-dim:#4494b8}.production-panel.goal-unknown{--goal:#a6b5aa;--goal-dim:#65746b}
+.production-panel[class*="goal-"] .production-fill{background:linear-gradient(90deg,var(--goal-dim),var(--goal))}
+.production-panel .progress-label b{color:var(--goal,var(--green))}
+.compact .production-progress-key{font-size:9px;margin-top:3px}
+/* 17 octobre : barres plus épaisses, repères de record conformes à la maquette. */
+.display-canvas .production-track{height:30px;min-height:30px;border-radius:8px}
+.display-canvas .public-track{height:16px;min-height:16px;border-radius:8px}
+.display-canvas .mini-track,.display-canvas .timer-progress{height:8px;min-height:8px}
+.compact .production-track{height:22px;min-height:22px}.compact .public-track{height:12px;min-height:12px}
+.record-challenge-note{display:flex;align-items:center;gap:10px;color:var(--green);font-weight:600}.record-challenge-note svg{width:24px;height:24px;flex-shrink:0}
+.hall-records article>div{min-width:0}.hall-record-date{margin-left:auto;text-align:right;font-size:15px;color:var(--muted);flex-shrink:0;max-width:30%;line-height:1.4}
+.compact .hall-records article{flex-wrap:wrap}.compact .hall-record-date{font-size:9px;max-width:100%;margin-left:auto}.compact .record-challenge-note{gap:6px}.compact .record-challenge-note svg{width:18px;height:18px}
+/* 3C : utiliser la place disponible pour une distinction lisible à distance. */
+.display-canvas:not(.compact) .zone-3C .public-badge-profile{gap:22px}
+.display-canvas:not(.compact) .zone-3C .security-badge{width:42%;max-width:210px;height:100%;max-height:210px;min-height:0;object-fit:contain}
+.zone-3C .public-badge-profile>div{min-width:0;flex:1}
+.display-canvas:not(.compact) .zone-3C .public-badge-profile .public-muted{font-size:21px;line-height:1.35}
+.display-canvas:not(.compact) .zone-3C .public-badge-profile h3{font-size:36px;line-height:1.15;margin:10px 0}
+.display-canvas:not(.compact) .zone-3C .public-badge-profile p{font-size:24px;line-height:1.35}
+.display-canvas:not(.compact) .zone-3C .public-paged{font-size:20px}
+.compact .zone-3C .public-badge-profile{align-items:center;text-align:center;gap:8px}
+.compact .zone-3C .security-badge{width:110px;height:110px;max-height:45%;object-fit:contain}
+.compact .zone-3C .public-badge-profile>div{flex:0 1 auto}
+.compact .zone-3C .public-badge-profile .public-muted{font-size:11px}
+.compact .zone-3C .public-badge-profile h3{font-size:20px;line-height:1.2;margin:5px 0}
+.compact .zone-3C .public-badge-profile p{font-size:13px;line-height:1.3}
+/* 2C / 2D / 3D / 1D : lecture à distance, dans l'espace de chaque carte. */
+.display-canvas:not(.compact) .zone-2C .operator-profile{flex:1;min-height:0;gap:22px}
+.display-canvas:not(.compact) .zone-2C .operator-profile .public-portrait{width:170px;height:170px;max-height:100%;border-radius:24px}
+.zone-2C .operator-profile>div{min-width:0}
+.display-canvas:not(.compact) .zone-2C .operator-profile h3{font-size:36px;line-height:1.15;margin-top:12px}
+.display-canvas:not(.compact) .zone-2C .operator-profile .public-muted{font-size:21px;line-height:1.35}
+.display-canvas:not(.compact) .zone-2C .public-paged{font-size:23px;line-height:1.4}
+.display-canvas:not(.compact) .zone-2C .public-note{font-size:17px}
+.display-canvas:not(.compact) .zone-2D .kaizen-counters{gap:16px}
+.display-canvas:not(.compact) .zone-2D .kaizen-counters strong{font-size:88px;line-height:1}
+.display-canvas:not(.compact) .zone-2D .kaizen-counters svg{width:30px;height:30px}
+.display-canvas:not(.compact) .zone-2D .kaizen-counters span{font-size:20px;line-height:1.35}
+.display-canvas:not(.compact) .zone-3D .weather-summary{gap:16px}
+.display-canvas:not(.compact) .zone-3D .weather-icon svg{width:64px;height:64px}
+.display-canvas:not(.compact) .zone-3D .weather-label{font-size:27px!important;line-height:1.2}
+.display-canvas:not(.compact) .zone-3D .weather-summary .public-muted{font-size:20px}
+.display-canvas:not(.compact) .zone-3D .weather-values span{font-size:18px}
+.display-canvas:not(.compact) .zone-3D .weather-values strong{font-size:46px;line-height:1.1}
+.display-canvas:not(.compact) .zone-3D .weather-values small{font-size:20px}
+.display-canvas:not(.compact) .level-panel .level-ring{width:170px;height:170px;border-width:9px}
+.display-canvas:not(.compact) .level-panel .level-ring strong{font-size:48px}
+.display-canvas:not(.compact) .level-panel .level-ring span{font-size:20px}
+.display-canvas:not(.compact) .level-panel .level-text strong{font-size:27px;line-height:1.2}
+.display-canvas:not(.compact) .level-panel .level-text>span{font-size:18px}
+.compact .zone-2C .operator-profile .public-portrait{width:85px;height:85px}
+.compact .zone-2C .operator-profile h3{font-size:20px;line-height:1.2}
+.compact .zone-2C .operator-profile .public-muted{font-size:11px}
+.compact .zone-2C .public-paged{font-size:13px;line-height:1.35}
+.compact .zone-2D .kaizen-counters strong{font-size:52px}
+.compact .zone-2D .kaizen-counters span{font-size:11px}
+.compact .zone-2D .kaizen-counters svg{width:22px;height:22px}
+.compact .zone-3D .weather-summary .weather-icon svg{width:40px;height:40px}
+.compact .zone-3D .weather-label{font-size:16px!important}
+.compact .zone-3D .weather-values strong{font-size:32px}
+.compact .zone-3D .weather-values span{font-size:11px}
+.compact .level-panel .level-ring{width:96px;height:96px}
+.compact .level-panel .level-ring strong{font-size:27px}
+.compact .level-panel .level-text strong{font-size:16px}
+.compact .level-panel .level-text>span{font-size:12px;line-height:1.3}
+/* 1E : mission entière, conditions et badge/points explicitement annoncés. */
+.display-canvas .challenge-content{align-items:stretch;min-height:0;margin:10px 0;gap:16px}
+.challenge-copy{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column}
+.challenge-copy h3{flex-shrink:0}
+.challenge-copy .fitted-editorial{--editorial-preferred-size:26;align-items:center}
+.challenge-copy .fitted-editorial-content{line-height:1.35;font-weight:500}
+.challenge-copy .editorial-body{max-width:none;margin:0;color:#f0dec1;line-height:inherit;font-size:inherit}
+.display-canvas .challenge-badge{align-self:center}
+.challenge-reward{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#edc284;font-size:16px;line-height:1.3;flex-shrink:0;margin-bottom:8px}
+.challenge-reward b{display:flex;align-items:center;gap:4px;white-space:nowrap;font-weight:600}
+.display-canvas .challenge-bottom{flex-shrink:0;font-size:14px}
+.compact .challenge-content{gap:7px;margin:7px 0}
+.compact .challenge-copy .fitted-editorial{--editorial-preferred-size:15}
+.compact .challenge-content .challenge-badge{width:45px;height:45px}
+.compact .challenge-reward{font-size:10px;gap:5px;margin-bottom:5px;align-items:flex-start}
+.compact .challenge-bottom{font-size:9px}
+.display-canvas .challenge-copy .editorial-body{font-size:inherit;line-height:inherit;max-width:none;margin:0;color:#f0dec1}
+.display-canvas:not(.compact) .challenge-copy .fitted-editorial{--editorial-preferred-size:28}
+.display-canvas:not(.compact) .challenge-copy .editorial-body,.display-canvas.compact .challenge-copy .editorial-body{font-size:inherit;line-height:inherit;margin:0;max-width:none}
+/* La jauge agrandie reste circulaire quand un bandeau réduit la hauteur du scénario. */
+.display-canvas:not(.compact) .level-panel .level-content{min-height:0}
+.display-canvas:not(.compact) .level-panel .level-ring{height:100%;max-height:170px;width:auto;aspect-ratio:1;flex:none}
+/* Le bandeau temporaire ne doit pas rogner le détail du score. */
+.display-canvas:not(.compact) .scenario-dashboard .score-panel .zone-title{margin-bottom:12px}
+.display-canvas:not(.compact) .scenario-dashboard .score-panel .score-number{font-size:58px}
+.display-canvas:not(.compact) .scenario-dashboard .score-panel .bonus-grid strong{font-size:25px}
+.display-canvas:not(.compact) .scenario-dashboard .score-panel .score-total{padding-top:10px}
+.challenge-reward b{flex-wrap:wrap;justify-content:flex-end}
+.challenge-reward b small{width:100%;font-size:11px;line-height:1.2;text-align:right;font-weight:400;color:#c8bca2}
+.compact .challenge-reward b small{font-size:8px}
+
+/* 4D: overlaid hourly curves, explicit units and readable totals beside chart. */
+.resource-overlay{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:22px;flex:1;min-height:0}
+.zone-4D .resource-overlay .public-chart{min-height:0;flex:1}
+.zone-4D .resource-overlay .public-chart svg{height:0;min-height:0;flex:1;width:100%}
+.zone-4D .resource-overlay .public-chart svg text{font-size:14px}
+.zone-4D .resource-overlay .public-chart-labels{font-size:13px}
+.resource-legend{display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-width:0}
+.resource-legend article{border-left:1px solid var(--line);padding-left:14px}
+.resource-legend h3{display:flex;align-items:center;gap:8px;font-size:21px;font-weight:500;margin:0 0 3px}
+.resource-legend h3 i{width:10px;height:10px;border-radius:50%;flex:none}
+.resource-legend h3 small{font-size:13px;color:var(--muted)}
+.resource-legend article>span{font-size:12px;color:var(--muted)}
+.resource-legend strong{display:block;font-size:27px;line-height:1.15;font-weight:500;white-space:nowrap}
+.resource-legend strong small{font-size:13px}.resource-legend p{font-size:12px;color:var(--muted);margin:3px 0 0}.resource-legend p b{color:var(--text);font-weight:500}
+.zone-4D .resource-period,.zone-4D .resource-note{font-size:12px}
+.compact .resource-overlay{grid-template-columns:minmax(0,1fr) 108px;gap:8px}
+.compact .resource-legend{gap:4px}.compact .resource-legend article{padding-left:6px}
+.compact .resource-legend h3{font-size:12px;gap:4px}.compact .resource-legend h3 i{width:6px;height:6px}.compact .resource-legend h3 small{font-size:8px}
+.compact .resource-legend article>span,.compact .resource-legend p{font-size:8px}.compact .resource-legend strong{font-size:15px}.compact .resource-legend strong small{font-size:8px}
+.compact .zone-4D .resource-overlay .public-chart svg text{font-size:14px}.compact .zone-4D .resource-overlay .public-chart-labels{font-size:7px}
+.compact .zone-4D .resource-period,.compact .zone-4D .resource-note{font-size:8px}
+
+.resource-overlay{grid-template-rows:minmax(0,1fr)}
+.zone-4D .resource-overlay .public-chart{height:100%;min-height:0}
+.resource-legend{min-height:0;gap:5px;line-height:1.1}
+.resource-legend h3{font-size:18px;line-height:1.1;margin:0 0 2px}
+.resource-legend strong{font-size:24px;line-height:1.05}
+.resource-legend p{font-size:10px;line-height:1.1;margin:2px 0 0}
+.compact .resource-legend h3{font-size:12px}.compact .resource-legend strong{font-size:15px}.compact .resource-legend p{font-size:8px}
+.resource-legend{gap:1px}.resource-legend h3{margin-bottom:1px}
