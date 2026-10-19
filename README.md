@@ -70,6 +70,8 @@ npm run typecheck
 npm test
 ```
 
+Validation de la copie publique le 19 octobre 2026 : **TypeScript valide, compilation Vite réussie et 130 tests automatisés réussis**. Les tests ont été exécutés après la compilation.
+
 Le test runner configure des mots de passe publics **réservés aux tests isolés** ; ils ne configurent pas le serveur de démonstration. Les tests couvrent les règles métier et API, et non une validation physique de l’usine.
 
 ## Périmètre et limites
